@@ -8,6 +8,12 @@ SELECT *
 FROM CovidData_PortfolioProject.dbo.CovidDeaths$
 ORDER BY 3, 4
 
+SELECT COUNT(date) as TOTAL_COUNT
+FROM CovidData_PortfolioProject.dbo.CovidDeaths$
+
+SELECT COUNT(date) as TOTAL_COUNT
+FROM CovidData_PortfolioProject.dbo.CovidVaccinations$
+
 --SELECT *
 --FROM CovidData_PortfolioProject.dbo.CovidVaccinations$
 
@@ -125,7 +131,7 @@ FROM CovidData_PortfolioProject.dbo.CovidVaccinations$
 Inner Join CovidData_PortfolioProject.dbo.CovidDeaths$
  ON CovidData_PortfolioProject.dbo.CovidDeaths$.location = CovidData_PortfolioProject.dbo.CovidVaccinations$.location
 
- -- USE CTE
+-- USE CTE
 WITH PopvsVac (Continent, Location, Date, Population, New_Vacciations, RollingSum)
 AS
 (
